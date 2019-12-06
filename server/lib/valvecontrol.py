@@ -254,7 +254,9 @@ class ValveControl():
 		self.moveMEVByAngle(travelDistance, velocity)
 
 	def moveMEVToOpenLimit(self):
-		if testEnded():
+		if not lockoutArmed():
+            return
+        if testEnded():
 			return
 		self.MEVStepper.setVelocity(self.MEVStepper.defaultVelocity)
 		while not self.MEVOpenLimitHit() and not testEnded():
@@ -268,7 +270,10 @@ class ValveControl():
 		self.MEVStepper.setVelocity(0)
 
 	def moveVentToOpenLimit(self):
-		if self.ventStepper is None:
+		if not lockoutArmed():
+            return
+        
+        if self.ventStepper is None:
 			return
 
 		if testEnded():
