@@ -12,7 +12,7 @@ pip3 install phidget22
 
 # Change mode (mode) of rc.local so we can modify it. 777 is the permission id we are changing to.
 # 777 allows anyone to read an write to the file. 
-chmod 777 /etc/rc.local
+sudo chmod 777 /etc/rc.local
 
 # Edit (sed) rc.local to automatically start the server when the Pi turns on. /exit 0/i inserts before "exit 0"
 	# From the rc.local file on the GitHub that this line replaces:
