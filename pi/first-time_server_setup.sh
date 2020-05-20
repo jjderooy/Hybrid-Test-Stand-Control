@@ -1,3 +1,4 @@
+# Created by JJ De Rooy
 # This aims script automates the setup of the Raspberry Pi server. It automagically installs
 # python modules, packages, creates necessary folders, etc.
 
@@ -19,4 +20,4 @@ chmod 777 /etc/rc.local
 	# Put this line before the exit statement in /etc/rc.local.
 	# The 30 second sleep is to allow the pi's networking to
 	# initialize (the 30s is arbitrary but seems to work).
-sed  '/exit 0/i (sleep 30s && /home/pi/Documents/htsc/pi/starthtsc.sh) &' /etc/rc.local > /etc/rc.local
+sed  '/exit 0/i (sleep 30s && /home/pi/Documents/htsc/pi/starthtsc.sh) &' /etc/rc.local
