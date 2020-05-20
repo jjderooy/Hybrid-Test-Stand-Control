@@ -1,15 +1,5 @@
 # Hybrid Test Stand Raspberry Pi Setup
 
- 1. Clone this repository into the folder `/home/pi/Documents/htsc`:
- `git clone https://github.com/UVicRocketry/Hybrid-Test-Stand-Control.git /home/pi/Documents/htsc`.
- 
- 1. `mkdir /home/pi/Documents/logs`
- 
- 1. Copy the line inside [rc.local](rc.local) into `/etc/rc.local`, just before the `exit` statement.
- This is what calls the startup script when the pi boots.
- 
- 1. That's it!
- 
 Open terminal on the Raspberry Pi and run: `wget https://raw.githubusercontent.com/jjderooy/Hybrid-Test-Stand-Control/master/pi/autoserversetup.sh && sudo bash autoserversetup.sh`
  
 ### Notes
