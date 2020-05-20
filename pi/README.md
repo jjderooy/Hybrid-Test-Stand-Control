@@ -10,7 +10,7 @@
  
  1. That's it!
  
-Open terminal on the Raspberry Pi and run: `wget https://raw.githubusercontent.com/jjderooy/Hybrid-Test-Stand-Control/master/pi/first-time_server_setup.sh && sudo bash first-time_server_setup.sh`
+Open terminal on the Raspberry Pi and run: `wget https://raw.githubusercontent.com/jjderooy/Hybrid-Test-Stand-Control/master/pi/autoserversetup.sh && sudo bash autoserversetup.sh`
  
 ### Notes
 
