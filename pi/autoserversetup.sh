@@ -12,10 +12,10 @@ mkdir /home/pi/Documents/logs
 pip3 install phidget22
 
 # Change mode (mode) of files and folders so we can modify them. 777 is the permission id we are changing to.
-# 777 allows anyone to read an write to the file. 
-chmod 777 /etc/rc.local
-chmod 777 /home/pi/Documents/logs
-chmod 777 /home/pi/Documents/htsc
+# 777 allows anyone to read an write to the file. -R applies the permissions to all files in the directory recursively
+chmod -R 777 /etc/rc.local
+chmod -R 777 /home/pi/Documents/logs
+chmod -R 777 /home/pi/Documents/htsc
 
 # Edit (sed) rc.local to automatically start the server when the Pi turns on. /exit 0/i inserts before "exit 0".
 # temp is a string that stores the edited contents of rc.local. temp is then written (>) back to rc.local.
