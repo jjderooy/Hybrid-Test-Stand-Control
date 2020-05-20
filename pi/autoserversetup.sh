@@ -11,9 +11,11 @@ mkdir /home/pi/Documents/logs
 # Install (pip3) python3 module  phidget22 for stepper motor controller boards
 pip3 install phidget22
 
-# Change mode (mode) of rc.local so we can modify it. 777 is the permission id we are changing to.
+# Change mode (mode) of files and folders so we can modify them. 777 is the permission id we are changing to.
 # 777 allows anyone to read an write to the file. 
 chmod 777 /etc/rc.local
+chmod 777 /home/pi/Documents/logs
+chmod 777 /home/pi/Documents/htsc
 
 # Edit (sed) rc.local to automatically start the server when the Pi turns on. /exit 0/i inserts before "exit 0".
 # temp is a string that stores the edited contents of rc.local. temp is then written (>) back to rc.local.
@@ -24,4 +26,3 @@ chmod 777 /etc/rc.local
 	# initialize (the 30s is arbitrary but seems to work).
 temp=$(sed '/exit 0/i (sleep 30s && /home/pi/Documents/htsc/pi/starthtsc.sh) &' /etc/rc.local)
 echo "$temp" > /etc/rc.local
-
