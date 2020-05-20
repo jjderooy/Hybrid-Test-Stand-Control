@@ -26,3 +26,14 @@ chmod -R 777 /home/pi/Documents/htsc
 	# initialize (the 30s is arbitrary but seems to work).
 temp=$(sed '/exit 0/i (sleep 30s && /home/pi/Documents/htsc/pi/starthtsc.sh) &' /etc/rc.local)
 echo "$temp" > /etc/rc.local
+
+# Delete autoserversetup.sh from ~/ and ~/Documents/htsc because running it twice will cause problems.
+rm ~/autoserversetup.sh ~/Documents/htsc
+
+
+
+
+
+
+
+
