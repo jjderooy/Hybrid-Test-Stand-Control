@@ -30,7 +30,7 @@ echo "$temp" > /etc/rc.local
 
 
 # Delete autoserversetup.sh from ~/ and ~/Documents/htsc because running it twice will cause problems.
-rm ~/Documents/htsc ~/autoserversetup.sh 
+rm ~/Documents/htsc/server/autoserversetup.sh ~/autoserversetup.sh 
 
 
 
