@@ -28,6 +28,7 @@ chmod -R 777 /home/pi/Documents/htsc
 #temp=$(sed '/exit 0/i (sleep 30s && /home/pi/Documents/htsc/pi/starthtsc.sh) &' /etc/rc.local)
 #echo "$temp" > /etc/rc.local
 echo "@reboot /home/pi/Documents/htsc/server/startserver.sh" | crontab -
+echo "@reboot /home/pi/Documents/htsc/server/startserver.sh" | crontab -
 
 
 # Delete autoserversetup.sh from ~/ and ~/Documents/htsc because running it twice will cause problems.
