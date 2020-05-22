@@ -13,27 +13,14 @@ pip3 install phidget22
 
 # Change mode (mode) of files and folders so we can modify them. 777 is the permission id we are changing to.
 # 777 allows anyone to read an write to the file. -R applies the permissions to all files in the directory recursively
-chmod -R 777 /etc/rc.local
 chmod -R 777 /home/pi/Documents/logs
 chmod -R 777 /home/pi/Documents/htsc
 
-# Edit (sed) rc.local to automatically start the server when the Pi turns on. /exit 0/i inserts before "exit 0".
-# temp is a string that stores the edited contents of rc.local. temp is then written (>) back to rc.local.
-# Done this way to prevent issues of reading a writing to the same file at the same time.
-	# From the rc.local file on the GitHub that this line replaces:
-	# Put this line before the exit statement in /etc/rc.local.
-	# The 30 second sleep is to allow the pi's networking to
-	# initialize (the 30s is arbitrary but seems to work).
-
-#temp=$(sed '/exit 0/i (sleep 30s && /home/pi/Documents/htsc/pi/starthtsc.sh) &' /etc/rc.local)
-#echo "$temp" > /etc/rc.local
+# Create a cron job to automatically run startserver.sh after booting
 echo "@reboot /home/pi/Documents/htsc/server/startserver.sh" | crontab -
-echo "@reboot /home/pi/Documents/htsc/server/startserver.sh" | crontab -
-
 
 # Delete autoserversetup.sh from ~/ and ~/Documents/htsc because running it twice will cause problems.
 rm /home/pi/Documents/htsc/server/autoserversetup.sh /home/pi/autoserversetup.sh 
-
 
 
 
