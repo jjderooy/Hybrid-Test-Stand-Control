@@ -16,9 +16,10 @@ pip3 install phidget22
 chmod -R 777 /home/pi/Documents/logs
 chmod -R 777 /home/pi/Documents/htsc
 
-# Create a cron job to automatically run startserver.sh after booting
-echo "@reboot /home/pi/Documents/htsc/server/startserver.sh" | crontab -
-echo "@reboot /home/pi/Documents/htsc/server/startserver.sh" | crontab -
+# Create a cron job to automatically run startserver.sh after booting. Haven't figured out why it needs to be run twice
+# to actually create the cron job.
+echo "@reboot /home/pi/Documents/htsc/server/starthtsc.sh" | crontab -
+echo "@reboot /home/pi/Documents/htsc/server/starthtsc.sh" | crontab -
 
 # Delete autoserversetup.sh from ~/ and ~/Documents/htsc because running it twice will cause problems.
 rm /home/pi/Documents/htsc/server/autoserversetup.sh /home/pi/autoserversetup.sh 
