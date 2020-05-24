@@ -1,6 +1,6 @@
 # Hybrid Test Stand Raspberry Pi Setup
 
-Open terminal on the Raspberry Pi and run: `wget https://raw.githubusercontent.com/jjderooy/Hybrid-Test-Stand-Control/master/server/autoserversetup.sh && bash autoserversetup.sh`
+Open terminal on the Raspberry Pi and run: `wget https://raw.githubusercontent.com/jjderooy/Hybrid-Test-Stand-Control/master/server/autoserversetup.sh && bash /home/pi/autoserversetup.sh`
  
 ### Notes
 
