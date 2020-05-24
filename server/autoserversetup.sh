@@ -11,12 +11,13 @@ mkdir /home/pi/Documents/logs
 # Install (pip3) python3 module  phidget22 for stepper motor controller boards
 pip3 install phidget22
 
-# Change mode (mode) of files and folders so we can modify them. 777 is the permission id we are changing to.
+# Change mode (chmode) of files and folders so we can modify them. 777 is the permission id we are changing to.
 # 777 allows anyone to read an write to the file. -R applies the permissions to all files in the directory recursively
 chmod -R 777 /home/pi/Documents/logs
 chmod -R 777 /home/pi/Documents/htsc
 
 # Create a cron job to automatically run startserver.sh after booting
+echo "@reboot /home/pi/Documents/htsc/server/startserver.sh" | crontab -
 echo "@reboot /home/pi/Documents/htsc/server/startserver.sh" | crontab -
 
 # Delete autoserversetup.sh from ~/ and ~/Documents/htsc because running it twice will cause problems.
