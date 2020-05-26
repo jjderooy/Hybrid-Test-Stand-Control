@@ -2,8 +2,8 @@
 
 
 # Wait 30 seconds to make sure networking is running.
-echo "Waiting 30s for networking to start..."
-sleep 30
+echo "Waiting 20s for networking to start..."
+sleep 20
 echo "Here we go. If the server fails to start, and error message will print."
 # kill any process using our server port before the server starts. We do this by getting the process id (pid) and killing it
 pid=$(lsof -t -i :9999 -s)
